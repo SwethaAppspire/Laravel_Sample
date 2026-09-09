@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Employee;
+use App\Messaging\NotificationService;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LeaveRequestController;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,22 @@ Route::post('/employees', function (StoreEmployeeRequest $request) {
     ]);
 });
 
+Route::get('/notify-test', function (NotificationService $notificationService) {
+    $employee = Employee::first();
+
+    if(!$employee) {
+        return 'No employee found in the database.';
+    }
+
+    $result = $notificationService->notify(
+        $employee,
+        'Hello! This is a test notification.'
+    );
+
+    return [
+        'employee' => $employee->email,
+        'success' => $result->success,
+        'message' => $result->message,
+    ];
+});
 require __DIR__.'/auth.php';

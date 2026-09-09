@@ -1,0 +1,14 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - app/Contracts/MessageChannel.php
+        - app/Messaging
+        - app/Providers/MessagingServiceProvider.php
+        - app/Console/Commands/NotifyEmployee.php
+        - tests/Unit/ChannelResolverTest.php
+        - tests/Unit/NotificationServiceTest.php
+        - tests/Unit/TwilioSmsChannelTest.php
+        - tests/Feature/NotificationChannelTest.php
