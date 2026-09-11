@@ -4,8 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "212c73987db3d5cd4e0ebcf59b8e843c",
+    "content-hash": "4066799a9545e64e383990e4a27ae5db",
     "packages": [
+        {
+            "name": "acme/activity-log",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/acme/activity-log",
+                "reference": "71a879803c4f2ea4d8480c83f7b5d5b911a33b71"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Acme\\ActivityLog\\ActivityLogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Acme\\ActivityLog\\": "src/"
+                }
+            },
+            "description": "Internal activity log package",
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "brick/math",
             "version": "0.18.0",
@@ -10324,7 +10350,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "acme/activity-log": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

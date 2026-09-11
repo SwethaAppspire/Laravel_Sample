@@ -1,4 +1,11 @@
 {
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/acme/activity-log"
+        }
+    ],
+
     "$schema": "https://getcomposer.org/schema.json",
     "name": "laravel/laravel",
     "type": "project",
@@ -12,7 +19,8 @@
         "php": "^8.3",
         "laravel/framework": "^13.17",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "acme/activity-log": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
